@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <title>Tailwind YouTube</title>
+</head>
+<body class="container font-redHat">
+    <header class="relative">
+        <nav class="flex justify-between items-center pt-[26px]">
+            <a href="#"><img src="./img/Logo_2.svg" alt="logo"></a>
+            <ul class="flex gap-12 md:hidden">
+                <li><a href="#" class="font-medium text-xl text-lightblack hover:text-darkred transition-colors lg:text-base">About</a></li>
+                <li><a href="#" class="font-medium text-xl text-lightblack hover:text-darkred transition-colors lg:text-base">Services</a></li>
+                <li><a href="#" class="font-medium text-xl text-lightblack hover:text-darkred transition-colors lg:text-base">Case Studies</a></li>
+                <li><a href="#" class="font-medium text-xl text-lightblack hover:text-darkred transition-colors lg:text-base">Careers</a></li>
+                <li><a href="#" class="font-medium text-xl text-lightblack hover:text-darkred transition-colors lg:text-base">Blog</a></li>
+            </ul>
+            <!--Mobile menu-->
+            <ul class="absolute  flex flex-col items-center left-6 right-6 top-24 bg-lightred">
+                <li><a href="#" class="block py-4 text-white">About</a></li>
+                <li><a href="#" class="block py-4 text-white">Services</a></li>
+                <li><a href="#" class="block py-4 text-white">Case Studies</a></li>
+                <li><a href="#" class="block py-4 text-white">Careers</a></li>
+                <li><a href="#" class="block py-4 text-white">Blog</a></li>
+            </ul>
+            <!--Burger button-->
+            <button class="burger hidden md:block">
+                <span class="burger-line top-line"></span>
+                <span class="burger-line mid-line"></span>
+                <span class="burger-line bottom-line"></span>
+            </button>
+        </nav>
+    </header>
+    
+</body>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="./js/tailwindConfig.js"></script>
+<style type="text/tailwindcss">
+    @layer components {
+        .container {
+            @apply max-w-[1080px]
+        }
+    }
+    /*Burger menu*/
+    .burger {
+        height: 20px;
+        position: relative;
+        width: 30px;
+    }
+    .burger-line {
+        display: flex;
+        width: 30px;
+        height: 2px;
+        background: #D70026;
+        transition: .3s all ease;
+    }
+    .top-line {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    .mid-line {
+        position: absolute;
+        top: 50%;
+        transform: translate(0, - 50%);
+    }
+    .bottom-line {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+    }
+    .burger.active>.top-line {
+        transform: translateY(8px) rotate(45deg);
+        transition: .3s all ease;
+    }
+    .burger.active>.mid-line {
+        opacity: 0;
+        transition: .3s all ease;
+    }
+    .burger.active>.bottom-line {
+        transform: translateY(8px) rotate(-45deg);
+        transition: .3s all ease;
+    }
+</style>
+</html>
