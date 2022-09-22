@@ -2,8 +2,13 @@ tailwind.config = {
     content: ['./*.html'],
     darkMode: 'class', // тёмная тема
       theme: {
+        screens: { //для адаптивности (переопределили брейкпоинты)
+          'lg': {'max':'992px'},
+          'md': {'max':'768px'},
+          'sm': {'max':'480px'}
+        },
         fontFamily: { 
-          redHat: ['"Red Hat Display"'] // подключаем шрифт GoogleFonts
+          redHat: ['"Red Hat Display"'] // подключаем шрифт GoogleFonts (переопределили)
         },
         container: {
           padding: '20px',
@@ -20,10 +25,8 @@ tailwind.config = {
           padding: {
             bigPadding: '40px'
           },
-          screens: { //для адаптивности
-            sm: {'max':'480px'},
-            md: {'max':'768px'},
-            lg: {'max':'992px'}
+          boxShadow:{
+            'customRed': '0px 0px 30px rgba(255, 13, 56, 0.21)'
           }
         }
       },
